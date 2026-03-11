@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minecraft-ai"
+version = "0.1.0"
+description = "Reinforcement learning agent for Minecraft using PPO"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.0",
+    "numpy>=1.24",
+    "gymnasium>=0.28",
+    "tensorboard>=2.12",
+    "imageio>=2.28",
+    "imageio-ffmpeg>=0.4",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+minerl = ["minerl==0.4.4"]
+dev = [
+    "pytest>=7.0",
+    "pytest-timeout>=2.1",
+]
+
+[tool.setuptools.packages.find]
+include = ["minecraft_ai*"]
